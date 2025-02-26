@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp-achtige Chat App</title>
+    <link rel="stylesheet" href="scratch_1.css">
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <!-- Gebruikersnaam invoeren -->
+    <div id="username-container">
+        <h2>Voer je naam in om te chatten</h2>
+        <input type="text" id="username-input" placeholder="Jouw naam">
+        <button id="set-username">Start Chat</button>
+    </div>
+
+    <!-- Chat-container -->
+    <div id="chat-container" style="display: none;">
+        <div id="chat-header">
+            <span id="username-header"></span>
+            <button id="logout-btn">Uitloggen</button>
+        </div>
+        <ul id="messages"></ul>
+        <form id="chat-form">
+            <button type="button" id="record-btn">🎤</button>
+            <button type="button" id="camera-btn">📷</button>
+            <input type="text" id="message-input" placeholder="Typ een bericht..." autocomplete="off" required>
+            <button type="submit">Verzenden</button>
+        </form>
+    </div>
+
+    <!-- Camera modal -->
+    <div id="camera-modal" style="display: none;">
+        <video id="camera-feed" autoplay></video>
+        <span id="recording-timer" style="display: none;">00:00</span>
+        <button id="take-photo">📸</button>
+        <button id="start-video">🎥</button>
+        <button id="stop-video" disabled>⏹️</button>
+        <button id="cancel">Annuleren</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
